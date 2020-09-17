@@ -12,10 +12,10 @@ import numpy as np
 import subprocess
 import os
 
-assignment_no_list = [0]
-task_no_list = [3]
+assignment_no_list = [0, 1]
+task_no_list = [[3], [2, 3]]
 def download_dataset(assignment_no=0, task_no=3):
-    if (assignment_no in assignment_no_list) and (task_no in task_no_list):
+    if (assignment_no in assignment_no_list) and (task_no in task_no_list[assignment_no]):
         url = "https://github.com/ee604/ee604_assignments/raw/master/assignment_" + str(assignment_no) + "/data/task_" + str(task_no) + ".zip"
         subprocess.check_output(["wget", "-O", "data.zip", url])
         subprocess.check_output(["unzip", "-o", "data.zip", "-d", "./data/"])
