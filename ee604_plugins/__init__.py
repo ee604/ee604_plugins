@@ -16,8 +16,8 @@ import io
 from base64 import b64decode, b64encode
 from IPython.display import HTML
 
-assignment_no_list = [0, 1, 2]
-task_no_list = [[3], [2, 3, 4], [1, 2, 3, 4]]
+assignment_no_list = [0, 1, 2, 3]
+task_no_list = [[3], [2, 3, 4], [1, 2, 3, 4], [1, 2, 3]]
 def download_dataset(assignment_no=0, task_no=3):
     if (assignment_no in assignment_no_list) and (task_no in task_no_list[assignment_no]):
         url = "https://github.com/ee604/ee604_assignments/raw/master/assignment_" + str(assignment_no) + "/data/task_" + str(task_no) + ".zip"
