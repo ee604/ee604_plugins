@@ -24,12 +24,13 @@ def download_dataset(assignment_no=0, task_no=3):
         if assignment_no == 4 and task_no == 4:
             link="https://www.youtube.com/watch?v=627MqC6E5Yo"
             YouTube(link).streams.first().download("./data")
-            os.rename("./data/" + os.listdir("./data")[0], "./data/shaky_video.mp4")
+            os.rename("./data/Sam and Cocoa - shaky original.mp4", "./data/shaky_video.mp4")
         else:
             url = "https://github.com/ee604/ee604_assignments/raw/master/assignment_" + str(assignment_no) + "/data/task_" + str(task_no) + ".zip"
             subprocess.check_output(["wget", "-O", "data.zip", url])
             subprocess.check_output(["unzip", "-o", "data.zip", "-d", "./data/"])
-            print("Download Complete!")
+
+        print("Download Complete!")
     else:
         print("No dataset available for assignment", assignment_no, ", task no", task_no)
 
